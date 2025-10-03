@@ -278,7 +278,7 @@ main {
     min-height: calc(100vh - 65px);
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url('../img/hero.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/hero.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     color: white;
     padding: 4rem 0;
