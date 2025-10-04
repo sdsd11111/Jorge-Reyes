@@ -3356,41 +3356,26 @@ h1 {
         transform: rotate(180deg);
     }
     /* =====================
-       Sección Parallax
+       Sección de Principios
        ===================== */
     .principles-section {
         position: relative;
-        overflow: hidden;
         min-height: 600px;
         display: flex;
         align-items: center;
         padding: 5rem 0;
         color: #fff;
-        z-index: 1;
-    }
-
-    .parallax-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('/img/hero-legado.jpg');
-        background-size: cover;
+        background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
-        will-change: transform;
+        background-size: cover;
         z-index: 1;
     }
-
-    .parallax-content {
+    
+    .principles-section .container {
         position: relative;
         z-index: 2;
-        color: white;
-        text-align: center;
-        padding: 2rem;
-        max-width: 800px;
-        margin: 0 auto;
+        width: 100%;
     }
 
     /* =====================

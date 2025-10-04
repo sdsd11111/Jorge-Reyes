@@ -79,62 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Efecto Parallax para la sección de Principios
-    const parallaxBg = document.querySelector('.parallax-bg');
-    
-    if (parallaxBg) {
-        // Precargar la imagen
-        const img = new Image();
-        // Usar ruta relativa para compatibilidad
-        img.src = 'img/hero-legado.jpg';
-        
-        // Asegurarse de que la imagen se cargue antes de aplicar el efecto
-        img.onload = function() {
-            // Aplicar el efecto parallax al hacer scroll
-            let ticking = false;
-            
-            function updateParallax() {
-                const scrollPosition = window.pageYOffset;
-                const elementPosition = parallaxBg.getBoundingClientRect().top + window.pageYOffset;
-                const distance = (scrollPosition + window.innerHeight) - elementPosition;
-                
-                if (distance > 0) {
-                    const yPos = -(distance * 0.2);
-                    parallaxBg.style.transform = `translate3d(0, ${yPos}px, 0)`;
-                }
-                
-                ticking = false;
-            }
-            
-            function onScroll() {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateParallax);
-                    ticking = true;
-                }
-            }
-            
-            // Usar requestAnimationFrame para mejor rendimiento
-            window.addEventListener('scroll', onScroll, { passive: true });
-            
-            // Manejar el redimensionamiento
-            function handleResize() {
-                if (window.innerWidth <= 768) {
-                    parallaxBg.style.backgroundAttachment = 'scroll';
-                    parallaxBg.style.transform = 'translate3d(0, 0, 0)';
-                    window.removeEventListener('scroll', onScroll);
-                } else {
-                    parallaxBg.style.backgroundAttachment = 'fixed';
-                    window.addEventListener('scroll', onScroll, { passive: true });
-                    updateParallax();
-                }
-            }
-            
-            // Inicializar
-            handleResize();
-            window.addEventListener('resize', handleResize);
-            
-            // Forzar una actualización inicial
-            updateParallax();
-        };
-    }
+    // Precargar imagen de fondo para la sección de Principios
+    const preloadImage = new Image();
+    preloadImage.src = 'img/Parralax.jpg';
 });
