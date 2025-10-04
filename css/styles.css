@@ -2358,7 +2358,38 @@ h1 {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-{{ ... }}
+    
+    .footer-column {
+        text-align: center;
+    }
+    
+    .footer-logo {
+        margin: 0 auto 1rem;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+    
+    .footer-newsletter form {
+        max-width: 100%;
+    }
+    
+    .copyright-bar {
+        padding: 1rem;
+    }
+}
+
+/* Hover effect for social links */
+.social-link:hover {
     transform: translateY(-3px);
 }
 
@@ -2376,7 +2407,51 @@ h1 {
 /* =====================
    Responsive Styles
    ===================== */
-{{ ... }}
+
+/* Mobile-first responsive design */
+@media (min-width: 320px) {
+    /* Base styles for all screen sizes */
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr 2fr;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
 
 /* Tablet and below (up to 1024px) */
 @media (max-width: 1024px) {
@@ -3277,10 +3352,47 @@ h1 {
         transition: transform 0.3s ease;
         font-size: 0.8rem;
     }
-
     .accordion-icon.active {
         transform: rotate(180deg);
     }
+    /* =====================
+       Sección Parallax
+       ===================== */
+    .principles-section {
+        position: relative;
+        overflow: hidden;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        padding: 5rem 0;
+        color: #fff;
+        z-index: 1;
+    }
+
+    .parallax-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/hero-legado.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        will-change: transform;
+        z-index: 1;
+    }
+
+    .parallax-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
     /* =====================
        Parallax Section - Final Mobile Fix
        ===================== */
