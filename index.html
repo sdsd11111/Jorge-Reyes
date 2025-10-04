@@ -24,6 +24,7 @@
     
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ecologia-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -34,10 +35,21 @@
 
     <main>
         <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
             @media (max-width: 768px) {
                 .hero {
-                    min-height: 90vh !important;
-                    padding: 80px 15px 40px !important;
+                    min-height: 100vh !important;
+                    height: auto !important;
+                    max-height: none !important;
+                    padding: 0 15px !important;
+                    overflow-y: auto !important;
+                }
+                .hero-cta {
+                    justify-content: center !important;
                 }
                 .hero h1 {
                     font-size: 1.8rem !important;
@@ -66,16 +78,131 @@
             }
         </style>
         <!-- Hero Section -->
-        <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('img/hero.jpg') no-repeat center center/cover; min-height: 100vh; display: flex; align-items: center; padding: 100px 20px; box-sizing: border-box; position: relative; overflow-y: auto;">
-            <div class="container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px; position: relative; z-index: 2;">
-                <div style="text-align: center; color: white; width: 100%; margin: 0 auto; padding: 1rem 0;">
-                    <h1 style="font-size: clamp(1.8rem, 5vw, 3.5rem); font-weight: 800; margin: 0 auto 1.5rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); line-height: 1.2; color: #ffffff; padding: 0 10px; word-wrap: break-word; hyphens: auto; white-space: normal;">
-                        Loja, Territorio de Vida.<br>La Gestión para un Futuro Ecológico.
+        <style>
+            /* Desktop Styles */
+            .hero {
+                width: 100%;
+                min-height: 100vh;
+                height: auto;
+                display: flex;
+                align-items: flex-start;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                position: relative;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            /* Desktop Background */
+            .hero {
+                background: 
+                    /* Gradient overlay */
+                    linear-gradient(
+                        to right, 
+                        rgba(0, 0, 0, 0.9) 0%,
+                        rgba(0, 0, 0, 0.7) 50%,
+                        rgba(0, 0, 0, 0.0) 100%
+                    ),
+                    /* Background image */
+                    url('img/hero.jpg') no-repeat 70% center/cover;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                min-height: 100vh;
+                padding: 0;
+            }
+            
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 60%;
+                background: radial-gradient(circle at 0% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+                pointer-events: none;
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 50%;
+                padding: 0 0 0 10%;
+                text-align: left;
+                margin: 0;
+                transform: none;
+                top: 0;
+            }
+            
+            /* Tablet Styles */
+            @media (min-width: 769px) and (max-width: 992px) {
+                .hero {
+                    background: 
+                        linear-gradient(
+                            to right, 
+                            rgba(0, 0, 0, 0.9) 0%,
+                            rgba(0, 0, 0, 0.7) 100%
+                        ),
+                        url('img/hero.jpg') no-repeat 60% center/cover;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+                .hero-content {
+                    max-width: 80%;
+                    padding-left: 5%;
+                }
+            }
+            
+            /* Mobile Styles */
+            @media (max-width: 768px) {
+                .hero {
+                    background: 
+                        /* Black overlay */
+                        linear-gradient(
+                            rgba(0, 0, 0, 0.3),
+                            rgba(0, 0, 0, 0.3)
+                        ),
+                        url('img/hero-movil.jpg') no-repeat center center/cover;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 90vh !important;
+                    padding: 80px 15px 40px !important;
+                }
+                
+                .hero::before {
+                    display: none; /* Remove the highlight effect on mobile */
+                }
+                
+                .hero-content {
+                    max-width: 90%;
+                    padding: 20px 5%;
+                    text-align: center;
+                    margin: 0 auto;
+                    position: relative;
+                    top: 0;
+                    transform: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    min-height: 100vh;
+                    box-sizing: border-box;
+                }
+            }
+        </style>
+        <section class="hero">
+            <div class="container" style="width: 100%; max-width: 1400px; margin: 0 auto; padding: 0; position: relative; z-index: 2;">
+                <div class="hero-content">
+                    <h1 style="font-size: clamp(1.8rem, 5vw, 3.5rem); font-weight: 800; margin: 0 0 1.5rem 0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); line-height: 1.2; color: #ffffff; padding: 0; word-wrap: break-word; hyphens: auto; white-space: normal;">
+                        La Loja del Siglo XXI Comienza Ahora!!
                     </h1>
-                    <p style="font-size: clamp(1.1rem, 3vw, 1.5rem); margin: 0 auto 3rem; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); max-width: 800px; line-height: 1.6; color: #f0f0f0; padding: 0 10px;">
-                        Más que un político: Médico, Académico y Exalcalde.<br>Capacidad probada para transformar Loja.
+                    <p style="font-size: clamp(1.1rem, 3vw, 1.5rem); margin: 0 0 3rem 0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); max-width: 100%; line-height: 1.6; color: #f0f0f0; padding: 0;">
+                        Jorge Reyes Jaramillo, exalcalde de Loja
                     </p>
-                    <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                    <div style="display: flex; justify-content: flex-start; margin-top: 2rem;" class="hero-cta">
                         <a href="https://wa.me/593XXXXXXXXX" class="cta-button" 
                            style="background-color: #f6ad55; color: #1a202c; border: none; padding: 15px 40px; 
                                   border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none;
@@ -83,7 +210,7 @@
                                   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
                                   text-transform: uppercase; letter-spacing: 1px;">
                             <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
-                            <span>Hablemos de Loja</span>
+                            <span>Únete Ahora</span>
                         </a>
                     </div>
                 </div>
@@ -129,6 +256,49 @@
                         <div class="card-footer">
                             <span class="emphasis">Énfasis en el Liderazgo</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Loja Verde y Ecológica -->
+        <section class="ecologia-section">
+            <div class="ecologia-header">
+                <h2>Loja, Un Territorio de Vida: Nuestro Compromiso Ecológico</h2>
+                <p>El Dr. Jorge Reyes propone una visión de desarrollo sostenible, donde la gestión ambiental es clave para asegurar la calidad de vida y el futuro de nuestra ciudad.</p>
+            </div>
+
+            <div class="ecologia-grid">
+                <!-- Tarjeta de Agua Potable -->
+                <div class="agua-card">
+                    <div class="agua-content">
+                        <div class="agua-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Agua Potable y Saneamiento: Prioridad de Gestión</h3>
+                        <p>La salud de Loja comienza con el agua. Gestión probada para garantizar la calidad y el caudal para todos los barrios, enfocados en la modernización de la UMAPAL para un servicio transparente y eficiente.</p>
+                    </div>
+                    <div class="agua-image"></div>
+                </div>
+
+                <!-- Tarjetas de Características -->
+                <div class="feature-cards">
+                    <!-- Tarjeta 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h4>Pulmones de la Ciudad</h4>
+                        <p>Plan de reforestación masiva en la cuenca del río y parques urbanos. Más espacios verdes para la recreación y la salud de las familias lojanas.</p>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h4>Gestión de Residuos Sostenible</h4>
+                        <p>Implementación de tecnología moderna para el manejo y aprovechamiento de los residuos sólidos. Loja limpia y mirando hacia una economía circular.</p>
                     </div>
                 </div>
             </div>
@@ -190,42 +360,53 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Valores, Misión y Visión -->
-        <section class="values-section principles-section">
+        <!-- Sección de Principios de Gestión -->
+        <section class="principles-section">
             <div class="container">
-                <h2 class="section-title">Principios de Gestión para Loja</h2>
-                <div class="values-grid">
+                <div class="section-header">
+                    <span class="section-tag">Nuestro Compromiso</span>
+                    <h2 class="section-title">Principios de Gestión para Loja</h2>
+                    <p class="section-subtitle">Bases fundamentales que guían nuestro trabajo por una Loja mejor</p>
+                </div>
+                
+                <div class="principles-grid">
                     <!-- Valor -->
-                    <div class="value-card" style="--card-bg: rgba(0, 56, 130, 0.9);">
+                    <div class="principle-card" data-aos="fade-up">
                         <div class="card-icon">
                             <i class="fas fa-hand-holding-heart"></i>
                         </div>
-                        <h3>Valor</h3>
-                        <p>Honestidad y Firmeza. El Gobierno de Loja debe ser transparente y tener liderazgo sólido.</p>
+                        <div class="card-content">
+                            <h3>Valor</h3>
+                            <p>Honestidad y Firmeza. El Gobierno de Loja debe ser transparente y tener liderazgo sólido.</p>
+                        </div>
                     </div>
 
                     <!-- Misión -->
-                    <div class="value-card" style="--card-bg: rgba(255, 199, 44, 0.9);">
+                    <div class="principle-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-icon">
                             <i class="fas fa-bullseye"></i>
                         </div>
-                        <h3>Misión</h3>
-                        <p>Liderar un Gobierno de Servicio enfocado en el Cantón Loja y resolver las necesidades críticas (agua, vías, ambiente).</p>
+                        <div class="card-content">
+                            <h3>Misión</h3>
+                            <p>Liderar un Gobierno de Servicio enfocado en el Cantón Loja y resolver las necesidades críticas (agua, vías, ambiente).</p>
+                        </div>
                     </div>
 
                     <!-- Visión -->
-                    <div class="value-card" style="--card-bg: rgba(0, 56, 130, 0.9);">
+                    <div class="principle-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-icon">
                             <i class="fas fa-eye"></i>
                         </div>
-                        <h3>Visión</h3>
-                        <p>Transformar a Loja en el referente de un Territorio de Vida y desarrollo sostenible en el sur del país.</p>
+                        <div class="card-content">
+                            <h3>Visión</h3>
+                            <p>Transformar a Loja en el referente de un Territorio de Vida y desarrollo sostenible en el sur del país.</p>
+                        </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>

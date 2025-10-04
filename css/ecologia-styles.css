@@ -1,0 +1,271 @@
+/* =====================
+   Loja Verde y Ecológica
+   ===================== */
+:root {
+    --verde-principal: #2E7D32;  /* Verde bosque oscuro */
+    --verde-claro: #E8F5E9;      /* Fondo claro */
+    --acento-ocre: #FFB300;      /* Amarillo/ocre para acentos */
+    --texto-oscuro: #1B5E20;     /* Verde oscuro para texto */
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* Sección Principal */
+.ecologia-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #ffffff 0%, var(--verde-claro) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Encabezado de la Sección */
+.ecologia-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 1.5rem;
+}
+
+.ecologia-header h2 {
+    color: var(--verde-principal);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.ecologia-header h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--acento-ocre);
+    margin: 1rem auto 0;
+}
+
+.ecologia-header p {
+    color: var(--texto-oscuro);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Contenedor de Características */
+.ecologia-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Tarjeta de Agua Potable */
+.agua-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+}
+
+.agua-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agua-icon {
+    font-size: 3rem;
+    color: var(--verde-principal);
+    margin-bottom: 1.5rem;
+}
+
+.agua-content h3 {
+    color: var(--verde-principal);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.agua-content p {
+    color: var(--texto-oscuro);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.agua-image {
+    background: url('../img/agua-potable.jpg') no-repeat center center/cover;
+    min-height: 100%;
+}
+
+/* Tarjetas de Características Mejoradas */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+    padding: 1rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--verde-principal), var(--acento-ocre));
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(46, 125, 50, 0.15);
+    border-color: rgba(46, 125, 50, 0.1);
+}
+
+.feature-card:hover::before {
+    height: 6px;
+    background: linear-gradient(90deg, var(--acento-ocre), var(--verde-principal));
+}
+
+.feature-icon {
+    font-size: 2.8rem;
+    color: var(--verde-principal);
+    margin-bottom: 1.8rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+    color: var(--acento-ocre);
+}
+
+.feature-card h4 {
+    color: var(--verde-principal);
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.feature-card h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--acento-ocre);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover h4::after {
+    width: 80px;
+    background: var(--verde-principal);
+}
+
+.feature-card p {
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Efecto de fondo sutil al hacer hover */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.feature-card:hover::after {
+    opacity: 1;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 992px) {
+    .agua-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .agua-image {
+        min-height: 300px;
+        order: -1;
+    }
+    
+    .agua-content {
+        padding: 2rem;
+    }
+    
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .ecologia-header h2 {
+        font-size: 2rem;
+    }
+    
+    .ecologia-header p {
+        font-size: 1.1rem;
+    }
+    
+    .agua-content h3 {
+        font-size: 1.75rem;
+    }
+    
+    .agua-content p,
+    .feature-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Animación de Fondo */
+.ecologia-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, var(--verde-principal), var(--acento-ocre), var(--verde-principal));
+    background-size: 300% 100%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(footerContainer);
     
     // Cargar el contenido del footer
-    fetch('../components/footer.html')
+    fetch('/components/footer.html')
         .then(response => response.text())
         .then(html => {
             footerContainer.innerHTML = html;

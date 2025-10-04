@@ -250,7 +250,7 @@ main {
 }
 
 .cta-button {
-    background-color: var(--accent-color);
+    background-color: #f0ae59;
     color: var(--primary-color);
     padding: 0.5rem 1.2rem;
     border-radius: 2rem;
@@ -514,11 +514,11 @@ main {
 
 .card-icon i {
     font-size: 1.8rem;
-    color: #e36a18;
+    color: #377f33;
 }
 
 .credibility-card h3 {
-    color: #e36a18;
+    color: #377f33;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -539,8 +539,8 @@ main {
 
 .emphasis {
     display: inline-block;
-    background-color: rgba(227, 106, 24, 0.1);
-    color: #e36a18;
+    background-color: rgba(55, 127, 51, 0.1);
+    color: #377f33;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -612,7 +612,7 @@ main {
     align-items: center;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #e36a18;
+    color: #377f33;
     transition: all 0.3s ease;
 }
 
@@ -622,7 +622,7 @@ main {
 
 .accordion-button i {
     transition: transform 0.3s ease;
-    color: #e36a18;
+    color: #377f33;
     font-size: 0.9rem;
 }
 
@@ -683,16 +683,21 @@ main {
     overflow: hidden;
 }
 
-/* Sección de Principios con imagen de fondo */
+/* =====================
+   Sección de Principios
+   ===================== */
 .principles-section {
     background-image: url('../img/parralax.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
-    padding: 5rem 0;
+    padding: 6rem 0;
+    color: #fff;
+    background-color: #f8f9fa; /* Color de respaldo en caso de que la imagen no cargue */
 }
 
+/* Añadir un overlay más sutil para mejorar la legibilidad */
 .principles-section::before {
     content: '';
     position: absolute;
@@ -700,7 +705,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4); /* Overlay más sutil */
     z-index: 1;
 }
 
@@ -709,12 +714,199 @@ main {
     z-index: 2;
 }
 
-.values-section .section-title,
-.principles-section .section-title {
-    color: white;
+/* Encabezado de la sección */
+.principles-section .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.principles-section .section-tag {
+    display: inline-block;
+    background-color: #f0ae59;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.principles-section .section-title {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.principles-section .section-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid de tarjetas de principios */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Estilos de las tarjetas de principios */
+.principle-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.principle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #f0ae59, #e36a18);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.principle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.principle-card .card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(240, 174, 89, 0.1);
+    border-radius: 50%;
+    font-size: 2.2rem;
+    color: #f0ae59;
+    transition: all 0.3s ease;
+}
+
+.principle-card:hover .card-icon {
+    background: #f0ae59;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.principle-card .card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.principle-card h3 {
+    color: #21355c;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.principle-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #f0ae59;
+    transition: all 0.3s ease;
+}
+
+.principle-card:hover h3::after {
+    width: 80px;
+    background: #21355c;
+}
+
+.principle-card p {
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    .principles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .principles-section {
+        padding: 4rem 0;
+        background-attachment: scroll;
+    }
+    
+    .principles-section .section-title {
+        font-size: 2rem;
+    }
+    
+    .principles-section .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .principles-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .principle-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .principle-card .card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .principles-section .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .principles-section .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .principle-card {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .principle-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .principle-card p {
+        font-size: 1rem;
+    }
 }
 
 .values-grid {
@@ -854,7 +1046,7 @@ h1 {
 
 /* Botón CTA Compacto */
 .cta-button {
-    background-color: var(--accent-color);
+    background-color: #f0ae59;
     color: var(--primary-color);
     padding: 0.4rem 1.1rem;
     border-radius: 2rem;
@@ -1712,9 +1904,9 @@ h1 {
 }
 
 .cta-section .cta-button {
-    background-color: var(--accent-color);
+    background-color: #f0ae59;
     color: var(--primary-color);
-    border: 2px solid var(--accent-color);
+    border: 2px solid #f0ae59;
     padding: 0.75rem 2.5rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -1982,7 +2174,7 @@ h1 {
    Footer
    ===================== */
 .main-footer {
-    background-color: var(--primary-color);
+    background-color: #21355c;  /* Cambiado de var(--primary-color) a #21355c */
     color: var(--white);
     padding: 4rem 0 0;
     margin-top: 0;
@@ -2038,7 +2230,7 @@ h1 {
 
 /* Footer Styles */
 .main-footer {
-    background-color: var(--primary-color);
+    background-color: #21355c;  /* Cambiado de var(--primary-color) a #21355c */
     color: var(--white);
     padding: 2rem 0 0;
     font-size: 0.9rem;
@@ -2154,10 +2346,10 @@ h1 {
 .copyright-bar {
     text-align: center;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
-    font-size: 0.8rem;
+    background-color: #1a2a4a;  /* Cambiado de rgba(0, 0, 0, 0.1) a #1a2a4a */
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
+    margin-top: 2rem;
 }
 
 /* Responsive adjustments */
@@ -2166,119 +2358,25 @@ h1 {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
-    .footer-column {
-        padding: 0;
-    }
-    
-    .footer-identity {
-        margin-bottom: 1rem;
-    }
-    
-    .footer-logo-img {
-        max-width: 100px;
-    }
-    
-    .footer-identity h3 {
-        font-size: 1rem;
-    }
-    
-    .footer-tagline {
-        font-size: 0.8rem;
-    }
-    
-    .contact-info p {
-        font-size: 0.85rem;
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-}
-
-.footer-tagline {
-    font-style: italic;
-    opacity: 0.9;
-    margin-bottom: 1.5rem;
-}
-
-/* Estilos para la información de contacto */
-.contact-info p {
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
-}
-
-.contact-info i {
-    color: var(--accent-color);
-    margin-top: 0.2rem;
-    width: 16px;
-    text-align: center;
-}
-
-/* Estilos para la navegación del footer */
-.footer-nav ul {
-    list-style: none;
-}
-
-.footer-nav li {
-    margin-bottom: 0.7rem;
-}
-
-.footer-nav a {
-    color: var(--white);
-    text-decoration: none;
-    transition: var(--transition);
-    display: block;
-    padding: 0.3rem 0;
-}
-
-.footer-nav a:hover {
-    color: var(--accent-color);
-    padding-left: 0.5rem;
-}
-
-/* Estilos para los enlaces de redes sociales */
-.social-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+{{ ... }}
     transform: translateY(-3px);
 }
 
 /* Barra de copyright */
 .copyright-bar {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #1a2a4a;  /* Cambiado de rgba(0, 0, 0, 0.2) a #1a2a4a */
     padding: 1.2rem 2rem;
     text-align: center;
-    margin-top: 3rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* =====================
    Responsive Styles
    ===================== */
+{{ ... }}
 
 /* Tablet and below (up to 1024px) */
 @media (max-width: 1024px) {
