@@ -1,0 +1,117 @@
+/* =================================
+   Acordeones de Vertientes Familiares
+   ================================= */
+.family-accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.family-accordion-item {
+    background: #fff;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.family-accordion:last-child {
+    margin-bottom: 0;
+}
+
+.family-accordion-header {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: left;
+    background: linear-gradient(135deg, #21355c 0%, #1a2942 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.family-accordion-header:hover {
+    background: linear-gradient(135deg, #1a2942 0%, #21355c 100%);
+}
+
+.family-accordion-title {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.family-accordion-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    text-align: left;
+}
+
+.family-accordion-header .accordion-icon {
+    color: #FFC72C;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+}
+
+.family-accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.family-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background: #fff;
+}
+
+.family-accordion-item.active .family-accordion-content {
+    max-height: 2000px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Ajustes para el contenido dentro del acordeón */
+.family-accordion .family-content {
+    padding: 0 1.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.family-accordion-item.active .family-content {
+    padding: 1.5rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .family-accordion-header {
+        padding: 1.2rem;
+    }
+    
+    .family-accordion-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .family-accordion .family-content,
+    .family-accordion-item.active .family-content {
+        padding: 1rem;
+    }
+    
+    .family-accordion-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .family-accordion-title .family-image-placeholder {
+        margin-bottom: 0.8rem;
+    }
+}

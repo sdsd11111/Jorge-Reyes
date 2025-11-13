@@ -1,0 +1,299 @@
+/* =====================
+   Hero Section Styles
+   ===================== */
+
+/* Hero para la página de Semblanza */
+section.hero {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.0) 100%
+    ), url('../img/hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Base Hero Styles */
+.page-hero {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Desktop Background */
+.page-hero {
+    background: 
+        /* Gradient overlay */
+        linear-gradient(
+            to right, 
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.7) 50%,
+            rgba(0, 0, 0, 0.0) 100%
+        ),
+        /* Background image */
+        var(--hero-bg, url('../img/hero.jpg') no-repeat 70% center/cover);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 60%;
+    background: radial-gradient(circle at 0% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+    padding: 0 0 0 10%;
+    text-align: left;
+    margin: 0;
+    transform: none;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-content h1 {
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 1.2;
+    color: #ffffff;
+    padding: 0;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+}
+
+.hero-content p {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    margin: 0 auto 3rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    max-width: 800px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    padding: 0 10px;
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 992px) {
+    .page-hero {
+        background: 
+            linear-gradient(
+                to right, 
+                rgba(0, 0, 0, 0.9) 0%,
+                rgba(0, 0, 0, 0.7) 100%
+            ),
+            var(--hero-bg, url('../img/hero.jpg') no-repeat 60% center/cover);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .hero-content {
+        max-width: 80%;
+        padding-left: 5%;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .page-hero {
+        background: var(--hero-bg-mobile, url('../img/hero-movil.jpg') no-repeat center center/cover) !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 90vh !important;
+        padding: 80px 15px 40px !important;
+        text-align: center;
+    }
+    
+    .page-hero::before {
+        display: none; /* Remove the highlight effect on mobile */
+    }
+    
+    .hero-content {
+        max-width: 90% !important;
+        padding: 20px 5% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        position: relative;
+        top: 0;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+        margin: 0 0 1.2rem 0 !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        width: 100%;
+        padding: 0 5px;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem !important;
+        margin: 0 auto 2rem !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 5px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.7rem !important;
+        padding: 0 2px !important;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem !important;
+        max-width: 100% !important;
+        padding: 0 2px !important;
+    }
+}
+
+/* Fix for mobile viewport height */
+@supports (-webkit-touch-callout: none) {
+    .page-hero {
+        min-height: -webkit-fill-available !important;
+        min-height: -moz-available !important;
+        min-height: fill-available !important;
+    }
+}
+
+/* Fix for mobile viewport height in landscape */
+@media (max-height: 700px) and (orientation: landscape) {
+    .page-hero {
+        min-height: 100vh !important;
+        height: auto !important;
+        padding: 60px 15px 30px !important;
+    }
+    
+    .hero-content {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+/* Ensure content is not hidden behind fixed header */
+@media (min-width: 1025px) {
+    .page-hero {
+        padding-top: 80px;
+    }
+    
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+}
+}
+
+@media (max-width: 768px) {
+    section.hero {
+        min-height: 100vh;
+        padding: 0;
+        background-attachment: scroll;
+        background-position: 60% center;
+        align-items: center;
+    }
+    
+    .page-hero {
+        min-height: 80vh;
+        padding: 100px 20px 60px;
+        background-attachment: scroll;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        min-height: 70vh;
+        padding: 80px 15px 40px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Specific page hero overrides */
+.legacy-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                url('../img/hero.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.valores-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), 
+                url('../img/hero.jpg') no-repeat center center/cover !important;
+    background-attachment: fixed;
+}
+
+.academia-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                url('../img/hero.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.plan-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), 
+                url('../img/hero.jpg') no-repeat center center/cover !important;
+    background-attachment: fixed;
+}
+
+.contacto-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), 
+                url('../img/hero.jpg') no-repeat center center/cover !important;
+    background-attachment: fixed;
+}

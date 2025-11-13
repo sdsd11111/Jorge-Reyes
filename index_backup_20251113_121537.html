@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jorge Reyes Jaramillo</title>
+    
+    <!-- Metaetiquetas Open Graph -->
+    <meta property="og:title" content="Dr. Jorge Reyes Jaramillo">
+    <meta property="og:description" content="En busca de una mejor Loja.">
+    <meta property="og:image" content="https://jorge-reyes.vercel.app/img/imagen%20destacada.jpg">
+    <meta property="og:url" content="https://jorge-reyes.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <!-- Metaetiquetas para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Jorge Reyes Jaramillo">
+    <meta name="twitter:description" content="En busca de una mejor Loja.">
+    <meta name="twitter:image" content="https://jorge-reyes.vercel.app/img/imagen%20destacada.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/hero-slider.css">
+    <link rel="stylesheet" href="css/ecologia-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- El header se cargará dinámicamente aquí -->
+    <div id="header-container">
+        <!-- El contenido del header se cargará aquí -->
+    </div>
+
+    <main>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            @media (max-width: 768px) {
+                .hero {
+                    min-height: 100vh !important;
+                    height: auto !important;
+                    max-height: none !important;
+                    padding: 0 15px !important;
+                    overflow-y: auto !important;
+                }
+                .hero-cta {
+                    justify-content: center !important;
+                }
+                .hero h1 {
+                    font-size: 1.8rem !important;
+                    line-height: 1.3 !important;
+                    margin-bottom: 1.2rem !important;
+                    padding: 0 5px !important;
+                    word-break: normal !important;
+                    hyphens: none !important;
+                    white-space: normal !important;
+                    display: block;
+                }
+                .hero p {
+                    font-size: 1.1rem !important;
+                    line-height: 1.5 !important;
+                    margin: 0 auto 2rem !important;
+                    padding: 0 5px !important;
+                }
+                .cta-button {
+                    padding: 12px 25px !important;
+                    font-size: 1rem !important;
+                    white-space: nowrap;
+                }
+                .cta-button i {
+                    font-size: 1.2rem !important;
+                }
+            }
+        </style>
+        <!-- Hero Slider Section -->
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <div class="hero-slider">
+            <div class="hero-slides">
+                <!-- Slide 1 -->
+                <div class="hero-slide active" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/hero-bg-1.jpg') center/cover;">
+                    <div class="hero-slide-content">
+                        <h1>La Loja del Siglo XXI Comienza Ahora</h1>
+                        <p>Un nuevo capítulo de progreso, innovación y desarrollo sostenible para nuestra querida ciudad.</p>
+                        <a href="#contacto" class="btn">Únete al Cambio</a>
+                    ),
+                    /* Background image */
+                    url('img/hero.jpg') no-repeat 70% center/cover;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                min-height: 100vh;
+                padding: 0;
+            }
+            
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 60%;
+                background: radial-gradient(circle at 0% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+                pointer-events: none;
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 50%;
+                padding: 0 0 0 10%;
+                text-align: left;
+                margin: 0;
+                transform: none;
+                top: 0;
+            }
+            
+            /* Tablet Styles */
+            @media (min-width: 769px) and (max-width: 992px) {
+                .hero {
+                    background: 
+                        linear-gradient(
+                            to right, 
+                            rgba(0, 0, 0, 0.9) 0%,
+                            rgba(0, 0, 0, 0.7) 100%
+                        ),
+                        url('img/hero.jpg') no-repeat 60% center/cover;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+                .hero-content {
+                    max-width: 80%;
+                    padding-left: 5%;
+                }
+            }
+            
+            /* Mobile Styles */
+            @media (max-width: 768px) {
+                .hero {
+                    background: 
+                        /* Black overlay */
+                        linear-gradient(
+                            rgba(0, 0, 0, 0.3),
+                            rgba(0, 0, 0, 0.3)
+                        ),
+                        url('img/hero-movil.jpg') no-repeat center center/cover;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 90vh !important;
+                    padding: 80px 15px 40px !important;
+                }
+                
+                .hero::before {
+                    display: none; /* Remove the highlight effect on mobile */
+                }
+                
+                .hero-content {
+                    max-width: 90%;
+                    padding: 20px 5%;
+                    text-align: center;
+                    margin: 0 auto;
+                    position: relative;
+                    top: 0;
+                    transform: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    min-height: 100vh;
+                    box-sizing: border-box;
+                }
+            }
+        </style>
+        <section class="hero">
+            <div class="container" style="width: 100%; max-width: 1400px; margin: 0 auto; padding: 0; position: relative; z-index: 2;">
+                <div class="hero-content">
+                    <h1 style="font-size: clamp(1.8rem, 5vw, 3.5rem); font-weight: 800; margin: 0 0 1.5rem 0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); line-height: 1.2; color: #ffffff; padding: 0; word-wrap: break-word; hyphens: auto; white-space: normal;">
+                        La Loja del Siglo XXI Comienza Ahora!!
+                    </h1>
+                    <p style="font-size: clamp(1.1rem, 3vw, 1.5rem); margin: 0 0 3rem 0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); max-width: 100%; line-height: 1.6; color: #f0f0f0; padding: 0;">
+                        Jorge Reyes Jaramillo, exalcalde de Loja
+                    </p>
+                    <div style="display: flex; justify-content: flex-start; margin-top: 2rem;" class="hero-cta">
+                        <a href="https://wa.me/593XXXXXXXXX" class="cta-button" 
+                           style="background-color: #f6ad55; color: #1a202c; border: none; padding: 15px 40px; 
+                                  border-radius: 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none;
+                                  display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;
+                                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                                  text-transform: uppercase; letter-spacing: 1px;">
+                            <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+                            <span>Únete Ahora</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Credibilidad -->
+        <section class="credibility-section">
+            <div class="container">
+                <h2 class="section-title">Dr. Jorge Reyes Jaramillo: Capacidad y Servicio para el Cantón Loja</h2>
+                <div class="credibility-cards">
+                    <!-- Card 1 -->
+                    <div class="credibility-card">
+                        <div class="card-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3>Gestión y Obras</h3>
+                        <p>Exalcalde que sí cumplió. Legado en Mercado Mayorista y Agua Potable. Honestidad y capacidad probada.</p>
+                        <div class="card-footer">
+                            <span class="emphasis">Énfasis en la Ejecución</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="credibility-card">
+                        <div class="card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Visión Ecológica</h3>
+                        <p>Compromiso con Loja, Territorio de Vida. Plan enfocado en el Eje Ambiental, la sostenibilidad y el futuro.</p>
+                        <div class="card-footer">
+                            <span class="emphasis">Énfasis en la Visión</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="credibility-card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Salud y Academia</h3>
+                        <p>Médico y formador de más de 2.000 profesionales. Liderazgo con conocimiento y vocación de servicio a los más pobres.</p>
+                        <div class="card-footer">
+                            <span class="emphasis">Énfasis en el Liderazgo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Loja Verde y Ecológica -->
+        <section class="ecologia-section">
+            <div class="ecologia-header">
+                <h2>Loja, Un Territorio de Vida: Nuestro Compromiso Ecológico</h2>
+                <p>El Dr. Jorge Reyes propone una visión de desarrollo sostenible, donde la gestión ambiental es clave para asegurar la calidad de vida y el futuro de nuestra ciudad.</p>
+            </div>
+
+            <div class="ecologia-grid">
+                <!-- Tarjeta de Agua Potable -->
+                <div class="agua-card">
+                    <div class="agua-content">
+                        <div class="agua-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Agua Potable y Saneamiento: Prioridad de Gestión</h3>
+                        <p>La salud de Loja comienza con el agua. Gestión probada para garantizar la calidad y el caudal para todos los barrios, enfocados en la modernización de la UMAPAL para un servicio transparente y eficiente.</p>
+                    </div>
+                    <div class="agua-image"></div>
+                </div>
+
+                <!-- Tarjetas de Características -->
+                <div class="feature-cards">
+                    <!-- Tarjeta 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h4>Pulmones de la Ciudad</h4>
+                        <p>Plan de reforestación masiva en la cuenca del río y parques urbanos. Más espacios verdes para la recreación y la salud de las familias lojanas.</p>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h4>Gestión de Residuos Sostenible</h4>
+                        <p>Implementación de tecnología moderna para el manejo y aprovechamiento de los residuos sólidos. Loja limpia y mirando hacia una economía circular.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Video y FAQ -->
+        <section class="video-faq-section">
+            <div class="container">
+                <div class="video-faq-grid">
+                    <!-- Columna de Video -->
+                    <div class="video-container">
+                        <h2 class="section-title">Capacidad Demostrada: Vea la Trayectoria que Transformó Loja</h2>
+                        <div class="video-wrapper">
+                            <!-- Reemplaza el src con el ID de tu video de YouTube -->
+                            <iframe 
+                                src="https://www.youtube.com/embed/VIDEO_ID" 
+                                title="Trayectoria del Dr. Jorge Reyes Jaramillo"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Columna de FAQ -->
+                    <div class="faq-container">
+                        <h2 class="section-title">Respuestas Clave para Loja</h2>
+                        <div class="accordion">
+                            <!-- Pregunta 1 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">
+                                    <span>¿Qué obras concretas hizo el Dr. Reyes como Exalcalde?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Durante su gestión como Alcalde de Loja, el Dr. Jorge Reyes Jaramillo lideró importantes proyectos como la construcción del Mercado Mayorista, mejoras significativas en el sistema de agua potable, y diversas obras de infraestructura que mejoraron la calidad de vida de los lojanos. Su administración se caracterizó por la transparencia y el cumplimiento de metas.</p>
+                                </div>
+                            </div>
+
+                            <!-- Pregunta 2 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">
+                                    <span>¿Cuál es su visión para la UMAPL?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>La visión del Dr. Reyes para la Unidad de Mantenimiento de Áreas Públicas de Loja (UMAPL) se centra en convertirla en un referente nacional de gestión ambiental urbana. Esto incluye la implementación de tecnologías limpias, programas de reciclaje comunitario, y la creación de más espacios verdes que mejoren la calidad del aire y la vida de los ciudadanos.</p>
+                                </div>
+                            </div>
+
+                            <!-- Pregunta 3 -->
+                            <div class="accordion-item">
+                                <button class="accordion-button">
+                                    <span>¿Por qué un Médico debería liderar el GAD de Loja?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>La formación médica del Dr. Reyes le ha proporcionado una visión integral de las necesidades humanas básicas: salud, educación y bienestar. Su experiencia en el sector salud le permite entender las prioridades de la población más vulnerable. Además, su trayectoria académica y de gestión demuestra que el liderazgo efectivo trasciende las profesiones, basándose en valores, capacidad de gestión y compromiso con la comunidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Principios de Gestión -->
+        <section class="principles-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/Parralax.jpg') no-repeat center center/cover;">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nuestro Compromiso</span>
+                    <h2 class="section-title">Principios de Gestión para Loja</h2>
+                    <p class="section-subtitle">Bases fundamentales que guían nuestro trabajo por una Loja mejor</p>
+                </div>
+                
+                <div class="principles-grid">
+                    <!-- Valor -->
+                    <div class="principle-card" data-aos="fade-up">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Valor</h3>
+                            <p>Honestidad y Firmeza. El Gobierno de Loja debe ser transparente y tener liderazgo sólido.</p>
+                        </div>
+                    </div>
+
+                    <!-- Misión -->
+                    <div class="principle-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Misión</h3>
+                            <p>Liderar un Gobierno de Servicio enfocado en el Cantón Loja y resolver las necesidades críticas (agua, vías, ambiente).</p>
+                        </div>
+                    </div>
+
+                    <!-- Visión -->
+                    <div class="principle-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Visión</h3>
+                            <p>Transformar a Loja en el referente de un Territorio de Vida y desarrollo sostenible en el sur del país.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sección CTA Final -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>LOJA Ecológica, con Gestión y Capacidad</h2>
+                <p class="cta-text">No más improvisación. Conozca el Plan de Desarrollo basado en la experiencia, la academia y el servicio a Loja.</p>
+                <a href="plan-para-loja.html" class="cta-button">Conozca el Plan para Loja</a>
+                
+                <div class="cta-quotes">
+                    <p class="quote">"Honestidad y Firmeza. El Gobierno de Loja debe ser transparente y tener liderazgo sólido."</p>
+                    <p class="quote">"Liderar un Gobierno de Servicio enfocado en el Cantón Loja y resolver las necesidades críticas (agua, vías, ambiente)."</p>
+                    <p class="quote">"Transformar a Loja en el referente de un Territorio de Vida y desarrollo sostenible en el sur del país."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer se cargará dinámicamente aquí -->
+    <div id="footer-container">
+        <!-- El contenido del footer se cargará aquí -->
+    </div>
+
+    <!-- Incluir los scripts necesarios -->
+    <script src="js/include-header.js"></script>
+    <script src="js/include-footer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+/* =====================
+   Plan para Loja - Estilos Actualizados
+   ===================== */
+:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #f0ae59;
+    --text-light: #f8f9fa;
+    --text-dark: #333;
+    --bg-light: #f8f9fa;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --blue: #21355c; /* Color azul para el sidebar */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: var(--blue) !important;
+}
+
+.sidebar-header {
+    background-color: var(--blue) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.sidebar-nav a {
+    color: var(--text-light) !important;
+}
+
+.sidebar-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.close-sidebar {
+    color: var(--text-light) !important;
+}
+
+.submenu {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Estilos generales */
+.plan-section {
+    padding: 6rem 0;
+    background-color: #fff;
+}
+
+.plan-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos para los encabezados de sección */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header .tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Estilos para las tarjetas de proyecto */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin: 4rem 0;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+    margin-bottom: 40px;
+}
+
+/* Estilos para móvil */
+@media (max-width: 992px) {
+    .project-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        margin: 0 10px 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    .project-image {
+        order: 1;
+        height: 250px;
+        width: 100%;
+        min-height: 250px;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .project-content {
+        order: 2;
+        padding: 1.5rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.5rem;
+        margin: 0.5rem 0 1rem;
+    }
+    
+    .project-content p {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        max-width: 100%;
+    }
+    
+    .project-features {
+        margin: 1rem 0;
+    }
+    
+    .project-features li {
+        font-size: 0.9rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .project-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 300px;
+    width: 100%;
+    display: block;
+}
+
+.project-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: rgba(219, 105, 35, 0.1);
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    margin: 0.5rem 0 1.5rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.project-content p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.project-features {
+    margin: 1.5rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-features li {
+    padding: 0.5rem 0;
+    color: #666;
+    display: flex;
+    align-items: flex-start;
+}
+
+.project-features li:before {
+    content: '✓';
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+/* Estilos para la sección de ciudadanía */
+.citizenship-section {
+    background-color: #f8f9fa;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.citizenship-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.citizenship-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 2rem;
+    }
+}
+
+.action-button {
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0 1.5rem;
+    font-size: 1.4rem;
+}
+
+.action-button:hover {
+    background-color: #e07c3a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card p {
+    color: var(--text-color);
+    padding: 0 1.5rem 2rem;
+    text-align: center;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #e36a18, #b04e0c);
+    color: white;
+    padding: 6rem 0 4rem;
+    text-align: center;
+    margin-top: -65px; /* Compensate for fixed header */
+    padding-top: 8rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* =====================
+   Responsive Styles
+   ===================== */
+
+/* Tablet and below (up to 1024px) */
+@media (max-width: 1024px) {
+    .plan-section {
+        padding: 3rem 0;
+    }
+    
+    .plan-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    .page-header {
+        padding: 5rem 0 3rem;
+        padding-top: 7rem;
+    }
+    
+    .project-content {
+        padding: 1.2rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.3rem;
+        margin: 0.3rem 0 0.8rem;
+    }
+    
+    .project-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-features li {
+        font-size: 0.85rem;
+        padding: 0.3rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .plan-section {
+        padding: 2rem 0;
+    }
+    
+    .plan-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .plan-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .plan-card {
+        margin-bottom: 1.5rem;
+        max-width: 100%;
+    }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+    .page-header {
+        padding: 4rem 0 2.5rem;
+        padding-top: 6rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .plan-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .plan-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .plan-card p {
+        font-size: 0.95rem;
+        padding: 0 1.25rem 1.5rem;
+    }
+}

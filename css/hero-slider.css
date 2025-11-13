@@ -1,0 +1,238 @@
+/* Estilos del Slider de Hero */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-slide-content {
+    max-width: 1200px;
+    padding: 2rem 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slide h1 {
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+    color: #ffffff;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-slide p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin: 0 0 2rem 0;
+    max-width: 800px;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    animation: fadeInUp 1s ease-out 0.3s;
+    animation-fill-mode: both;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+.hero-slide .btn {
+    animation: fadeInUp 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+/* Controles de navegación */
+.slider-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+}
+
+/* Flechas de navegación */
+.slider-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+}
+
+.slider-arrow:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Indicadores del slider */
+.slider-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero-slide {
+        padding: 0 !important;
+        text-align: center;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        height: 100% !important;
+        min-height: 100vh;
+        box-sizing: border-box;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .hero-slide-content {
+        padding: 0.5rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .hero-slide h1 {
+        font-size: 1.6rem !important;
+        line-height: 1.3;
+        margin: 0 0 1rem 0 !important;
+        padding: 0 5px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        white-space: normal !important;
+        word-wrap: break-word;
+        word-break: normal;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        display: block;
+        max-width: 100%;
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+    }
+    
+    .hero-slide p {
+        font-size: 1.05rem !important;
+        line-height: 1.5;
+        margin: 0 0 1.5rem 0 !important;
+        padding: 0 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .hero-slide .btn {
+        width: auto !important;
+        max-width: 280px !important;
+        padding: 0.8rem 1.5rem !important;
+        font-size: 1rem !important;
+        white-space: nowrap;
+        margin: 0.5rem auto !important;
+    }
+    
+    .hero-slide .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .slider-nav {
+        bottom: 20px;
+        gap: 10px;
+    }
+    
+    .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .slider-indicators {
+        bottom: 20px;
+    }
+}

@@ -1,0 +1,170 @@
+/* Estilos para la sección de Llamado a la Acción */
+.cta-section {
+    background: linear-gradient(135deg, #21355c 0%, #1a2a4a 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #FFC72C;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+}
+
+.cta-button.primary {
+    background-color: #FFC72C;
+    color: #21355c;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.cta-button i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.primary:hover {
+    background-color: #e6b000;
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Efecto de patrón decorativo sutil */
+.cta-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 1;
+}
+
+/* Efecto de brillo al pasar el mouse */
+.cta-highlight {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.cta-section:hover .cta-highlight {
+    opacity: 1;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 3rem 1rem;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0.8rem 1rem;
+        white-space: normal;
+        height: auto;
+        min-height: 48px;
+        line-height: 1.3;
+    }
+    
+    .cta-button i {
+        margin-right: 6px;
+        font-size: 1em;
+    }
+}
+
+/* Efecto de animación sutil */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.cta-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #FFC72C;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
