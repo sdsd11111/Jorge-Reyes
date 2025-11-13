@@ -2,6 +2,58 @@
    Semblanza Page Styles
    ===================== */
 
+/* Estilos para el hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/hero-semblanza.jpg') center/cover no-repeat;
+    color: white;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 0 0 1.5rem 0;
+    color: #FFC72C;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 0 1rem;
+    line-height: 1.2;
+}
+
+.hero p.hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/hero-movil.jpg') center/cover no-repeat !important;
+        min-height: 100vh;
+        padding: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p.hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
 /* Estilos específicos para el botón "Plan para Loja" en el header */
 #header-container .header-actions .cta-button {
     background-color: #f0ae59;

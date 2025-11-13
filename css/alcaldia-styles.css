@@ -12,7 +12,7 @@
 }
 
 /* Estilos para el hero */
-.alcaldia-hero {
+.hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/alcaldia-hero.jpg') center/cover no-repeat;
     color: white;
     height: 100vh;
@@ -26,6 +26,27 @@
     margin: 0;
     padding: 1rem;
     box-sizing: border-box;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/hero-movil.jpg') center/cover no-repeat !important;
+        min-height: 100vh;
+        padding: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #FFC72C;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .alcaldia-hero h1 {
