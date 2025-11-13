@@ -15,17 +15,51 @@
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/alcaldia-hero.jpg') center/cover no-repeat;
     color: white;
-    height: 100vh;
-    min-height: 600px; /* Altura mínima para pantallas muy pequeñas */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     position: relative;
     margin: 0;
     padding: 1rem;
     box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 0 0 1.5rem 0;
+    color: #FFC72C;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 0;
+    line-height: 1.2;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.hero p.hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    color: #fff;
+    line-height: 1.6;
 }
 
 /* Estilos para móviles */
@@ -49,14 +83,6 @@
     }
 }
 
-.alcaldia-hero h1 {
-    font-size: 3.5rem;
-    margin: 0 0 1.5rem 0;
-    color: #FFC72C;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 0 1rem;
-    line-height: 1.2;
-}
 
 .alcaldia-hero p {
     font-size: 1.5rem;

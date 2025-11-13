@@ -1,6 +1,52 @@
 /* =====================
    Plan para Loja - Estilos Actualizados
    ===================== */
+
+/* Estilos específicos para el hero de Plan para Loja en móviles */
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 100vh !important;
+        height: 100vh !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: var(--hero-bg-mobile, var(--hero-bg, url('../img/hero-movil.jpg') no-repeat center center/cover)) !important;
+    }
+    
+    .page-hero .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .page-hero .hero-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 2rem !important;
+        text-align: center !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .page-hero p {
+        font-size: 1.2rem !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
 :root {
     --primary-color: #1a1a1a;
     --accent-color: #f0ae59;

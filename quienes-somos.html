@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principios y Valores - Dr. Jorge Reyes Jaramillo</title>
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
     <link rel="stylesheet" href="css/hero-styles.css">
     <link rel="stylesheet" href="css/quienes-somos-styles.css">
+    <link rel="stylesheet" href="css/cta-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/mobile-fixes.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- El header se cargará dinámicamente aquí -->
+    <!-- El header se cargará dinámicamente -->
     <div id="header-container">
+        <!-- El contenido del header se cargará aquí -->
     </div>
 
     <main>
@@ -134,15 +137,41 @@
         </section>
     </main>
 
-    <script src="js/include-header.js"></script>
-    <script src="js/main.js"></script>
-    <!-- Footer se cargará dinámicamente aquí -->
+    <!-- Footer se cargará dinámicamente -->
     <div id="footer-container">
         <!-- El contenido del footer se cargará aquí -->
     </div>
+
     <!-- Incluir los scripts necesarios -->
     <script src="js/include-header.js"></script>
     <script src="js/include-footer.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        // Inicializar componentes de la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar acordeones - todos comienzan cerrados
+            const acordeones = document.querySelectorAll('.acordeon-btn');
+            
+            acordeones.forEach(btn => {
+                // Asegurarse de que todos los acordeones inician cerrados
+                btn.parentElement.classList.remove('active');
+                
+                // Agregar evento de clic
+                btn.addEventListener('click', function() {
+                    const acordeonItem = this.parentElement;
+                    const isActive = acordeonItem.classList.contains('active');
+                    
+                    // Cerrar todos los acordeones primero
+                    document.querySelectorAll('.acordeon-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Abrir solo el acordeón clickeado
+                    if (!isActive) {
+                        acordeonItem.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

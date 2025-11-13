@@ -7,7 +7,9 @@
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
     <link rel="stylesheet" href="css/hero-styles.css">
     <link rel="stylesheet" href="css/semblanza-styles.css">
     <link rel="stylesheet" href="css/family-accordion.css">
@@ -397,24 +399,29 @@
         <!-- El contenido del footer se cargará aquí -->
     </div>
 
+    <!-- Scripts -->
     <script src="js/include-header.js"></script>
     <script src="js/include-footer.js"></script>
     <script>
-        // Acordeón funcionalidad con mejor manejo de altura
+        // Inicializar el menú móvil después de cargar el header
         document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar acordeones
             const accordionItems = document.querySelectorAll('.accordion-item');
             
             function closeAllAccordions() {
-                accordionItems.forEach(accItem => {
-                    const accContent = accItem.querySelector('.accordion-content');
-                    const accIcon = accItem.querySelector('.accordion-header i');
-                    
-                    accContent.style.maxHeight = '0';
-                    accContent.style.opacity = '0';
-                    accContent.style.padding = '0 1.5rem';
-                    accContent.style.visibility = 'hidden';
-                    if (accIcon) accIcon.className = 'fas fa-chevron-down';
-                    accItem.classList.remove('active');
+                accordionItems.forEach(item => {
+                    const content = item.querySelector('.accordion-content');
+                    const icon = item.querySelector('.accordion-header i');
+                    item.classList.remove('active');
+                    if (content) {
+                        content.style.maxHeight = '0';
+                        content.style.opacity = '0';
+                        content.style.padding = '0 1.5rem';
+                        content.style.visibility = 'hidden';
+                    }
+                    if (icon) {
+                        icon.className = 'fas fa-chevron-down';
+                    }
                 });
             }
             

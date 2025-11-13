@@ -7,9 +7,12 @@
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
     <link rel="stylesheet" href="css/hero-styles.css">
     <link rel="stylesheet" href="css/alcaldia-styles.css">
+    <link rel="stylesheet" href="css/cta-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -453,40 +456,9 @@
 
     <script src="js/include-header.js"></script>
     <script src="js/include-footer.js"></script>
-    <script src="js/main.js"></script>
     <script>
         // Inicializar componentes de la página
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar menú móvil
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-            const sidebarOverlay = document.querySelector('.sidebar-overlay');
-            const closeSidebar = document.querySelector('.close-sidebar');
-
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() {
-                    sidebar.classList.add('active');
-                    sidebarOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-
-            if (closeSidebar) {
-                closeSidebar.addEventListener('click', function() {
-                    sidebar.classList.remove('active');
-                    sidebarOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            }
-
-            if (sidebarOverlay) {
-                sidebarOverlay.addEventListener('click', function() {
-                    sidebar.classList.remove('active');
-                    sidebarOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            }
-
             // Inicializar acordeones - todos comienzan cerrados
             const acordeones = document.querySelectorAll('.acordeon-btn');
             
